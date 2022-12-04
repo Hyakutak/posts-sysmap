@@ -3,11 +3,10 @@ import { useEffect, useState  } from 'react';
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import CardUser from '../Card/CardUser';
-import { ContentMain, PostContent, ContentComment, ButtonClose } from './ModalMoreInfo.elements';
+import CardUser from '../Card/CardUser/CardUser';
+import { ContentMain, PostContent, ContentComment, ButtonClose, TitlePost, TextPost } from './ModalMoreInfo.elements';
 
 export default function ModalMoreInfo({ openModal, idPost, title, text, onClose }) {
-    const [open, setOpen] = React.useState(false);
     const [comment, setComment] = useState([])
     const apiComment = `https://jsonplaceholder.typicode.com/posts/${idPost}/comments`;
 
@@ -28,18 +27,19 @@ export default function ModalMoreInfo({ openModal, idPost, title, text, onClose 
     return (
         <Modal
             open={openModal}
+            onClose={onClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
             <PostContent>
                 <ContentMain>
-                <ButtonClose onClick={onClose}>X</ButtonClose>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                    <ButtonClose onClick={onClose}>X</ButtonClose>
+                    <TitlePost>
                         { title }
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    </TitlePost>
+                    <TextPost>
                         { text }
-                    </Typography>
+                    </TextPost>
                 </ContentMain>
                 <ContentComment>
                     { users }

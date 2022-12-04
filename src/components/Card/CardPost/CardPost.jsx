@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { useEffect, useState  } from 'react';
-import CardActions from '@mui/material/CardActions';
+import { useState  } from 'react';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import ModalMoreInfo from '../Modal/ModalMoreInfo';
-import { CardPosts, Content, TitlePost } from './CardPost.elements';
+import ModalMoreInfo from '../../Modal/ModalMoreInfo';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { CardPosts, Content, TitlePost, TextPost, CardActionsButton, ButtonMoreInfo } from './CardPost.elements';
 
 function CardPost({ titlePost, textPost, idUser, idPost}) {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -21,16 +19,19 @@ function CardPost({ titlePost, textPost, idUser, idPost}) {
                     <TitlePost>
                         {titlePost}
                     </TitlePost>
-                    <Typography variant="body2">
+                    <TextPost>
                         {textPost}
-                    </Typography>
+                    </TextPost>
                 </CardContent>
-                <CardActions>
-                    <Button size="small" onClick={handleOnCloseModal} >Saiba Mais</Button>
+                <CardActionsButton>
+                    <ButtonMoreInfo size="small" onClick={handleOnCloseModal} >
+                        Saiba Mais
+                        <KeyboardArrowRightIcon />
+                    </ButtonMoreInfo>
                     {handleOnCloseModal && (
                         <ModalMoreInfo openModal={isModalOpen} title={titlePost} text={textPost} idUserPost={idUser} idPost={idPost} onClose={handleOnCloseModal} />
                     )}
-                </CardActions>
+                </CardActionsButton>
             </Content>
         </CardPosts>
     );
