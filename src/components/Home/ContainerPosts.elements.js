@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../Device';
 
 export const MainContainer = styled.div`
     width: 1100px;
@@ -7,10 +8,10 @@ export const MainContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    @media screen and (max-width: 769px) {
+    @media ${device.mobileL} {
         width: 100%;
     }
-    @media screen and (max-width: 1000px) and (min-width: 770px)  {
+    @media ${device.tablet} {
         width: 900px;
     }
 `;
@@ -20,7 +21,7 @@ export const ContentCards = styled.div`
     flex-wrap: wrap;
     gap: 20px;
     padding: 1rem;
-    @media screen and (max-width: 1000px) and (min-width: 770px)  {
+    @media ${device.tablet} {
         align-items: center;
         justify-content: center;
     }

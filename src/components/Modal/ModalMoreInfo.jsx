@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState  } from 'react';
 import axios from 'axios';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CardUser from '../Card/CardUser/CardUser';
 import { ContentMain, PostContent, ContentComment, ButtonClose, TitlePost, TextPost } from './ModalMoreInfo.elements';

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { device } from '../../../Device';
 
 export const CardPosts = styled.div`
     width: 30%;
     min-height: 250px;
-    @media screen and (max-width: 769px) {
+    @media ${device.mobileL} {
         width: 100%;
     }
-    @media screen and (max-width: 1000px) and (min-width: 770px)  {
+    @media ${device.tablet} {
         width: 47%;
     }
 `;
@@ -28,7 +29,7 @@ export const TitlePost = styled.h2`
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    @media screen and (max-width: 769px) {
+    @media ${device.mobileL} {
         margin-bottom: 10px;
     }
 `;

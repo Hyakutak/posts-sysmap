@@ -9,7 +9,10 @@ const GlobalStyle = createGlobalStyle`
         --color-green: #82efaa;
         --color-blue-dark: #2b6de3;
         --color-blue-light: #18b1ef;
-    } 
+    }
+    .css-79ws1d-MuiModal-root {
+        overflow: auto;
+    }
 `;
 
 export default GlobalStyle;

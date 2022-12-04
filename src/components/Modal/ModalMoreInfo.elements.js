@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../Device';
 
 export const ContentMain = styled.div`
     background: #FFF;
@@ -12,10 +13,11 @@ export const PostContent = styled.div`
     width: 1000px;
     margin: 0 auto;
     padding: 10px;
-    @media screen and (max-width: 769px) {
+    overflow: auto;
+    @media ${device.mobileL} {
         width: 100%;
     }
-    @media screen and (max-width: 1000px) and (min-width: 770px)  {
+    @media ${device.tablet} {
         width: 100%;
     }
 `;
@@ -44,10 +46,10 @@ export const ContentComment = styled.div`
     background: #FFF;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    @media screen and (max-width: 769px) {
+    @media ${device.mobileL} {
         grid: "1fr";
     }
-    @media screen and (max-width: 1000px) and (min-width: 770px)  {
+    @media ${device.tablet} {
         grid: "1fr 1fr";
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
