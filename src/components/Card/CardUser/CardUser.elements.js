@@ -23,11 +23,12 @@ export const NameUser = styled.h3`
     text-transform: capitalize;
 `;
 
-export const EmailUser = styled.h4`
+export const EmailUser = styled.a`
     margin: 0;
     width: 100%;
     text-align: center;
     text-transform: lowercase;
+    text-decoration: none;
     color: var(--color-blue-dark);
 `;
 
